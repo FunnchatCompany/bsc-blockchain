@@ -29,7 +29,7 @@ import "./Ownable.sol";
  * functions have been added to mitigate the well-known issues around setting
  * allowances. See {IERC20-approve}.
  */
-contract ABCToken is Context, IERC20, Ownable {
+contract BEP20Token is Context, IERC20, Ownable {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
@@ -42,8 +42,8 @@ contract ABCToken is Context, IERC20, Ownable {
   string public _name;
 
   constructor() public {
-    _name = "ABC token";
-    _symbol = "abc";
+    _name = "Hello token";
+    _symbol = "HIT";
     _decimals = 18;
     _totalSupply = 100000000000000000000000000;
     _balances[msg.sender] = _totalSupply;
@@ -70,6 +70,13 @@ contract ABCToken is Context, IERC20, Ownable {
    */
   function symbol() external override view returns (string memory) {
     return _symbol;
+  }
+
+  /**
+  * @dev Returns the token name.
+  */
+  function name() external override view returns (string memory) {
+    return _name;
   }
 
   /**

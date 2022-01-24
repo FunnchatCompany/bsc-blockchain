@@ -19,6 +19,11 @@ interface IERC20 {
      * @dev Returns the contract owner.
      */
     function symbol() external view returns (string memory);
+
+    /**
+     * @dev Returns the token name.
+     */
+    function name() external view returns (string memory);
     
     /**
      * @dev Returns the bep token owner.
